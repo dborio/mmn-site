@@ -29,6 +29,7 @@ header {
 
 header img {
     max-width: 150px;
+    transition: transform 0.3s ease-in-out;
 }
 
 header h1 {
@@ -102,5 +103,22 @@ footer {
 
     h2 {
         font-size: 1.5em;
+    }
+}
+
+/* Logo Animation */
+.logo-animated {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }
