@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const logo = document.getElementById('logo');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
 
     if (logo) {
         logo.addEventListener('mouseenter', () => {
@@ -8,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         logo.addEventListener('mouseleave', () => {
             logo.classList.remove('logo-animated');
+        });
+    }
+
+    if (hamburgerMenu && navLinks) {
+        hamburgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     }
 
