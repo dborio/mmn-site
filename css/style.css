@@ -6,7 +6,6 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Hide scrollbars from canvas */
 }
 
 /* Container for centered content */
@@ -23,7 +22,7 @@ body {
 header {
     background: #1e1e1e;
     color: #e0e0e0;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     border-bottom: 1px solid #333;
     position: relative;
@@ -31,7 +30,7 @@ header {
 }
 
 header img {
-    max-width: 150px;
+    max-width: 100px;
     transition: transform 0.3s ease-in-out;
 }
 
