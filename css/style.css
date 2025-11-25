@@ -1,6 +1,6 @@
 /* General Body Styles */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Share Tech', sans-serif;
     background-color: #000000;
     color: #e0e0e0;
     line-height: 1.6;
@@ -13,9 +13,12 @@ body {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background: #1e1e1e;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background: rgba(30, 30, 30, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(102, 255, 102, 0.2);
     border-radius: 8px;
+    border: 1px solid rgba(102, 255, 102, 0.3);
 }
 
 /* Header Styles */
@@ -27,6 +30,7 @@ header {
     border-bottom: 1px solid #333;
     position: relative;
     z-index: 10;
+    transition: background-color 0.3s ease;
 }
 
 header img {
@@ -48,6 +52,7 @@ nav {
     justify-content: center;
     align-items: center;
     position: relative;
+    transition: background-color 0.3s ease;
 }
 
 .nav-links {
@@ -157,7 +162,7 @@ section {
 h2 {
     color: #ffffff;
     font-size: 1.8em;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #66ff66;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -187,6 +192,7 @@ footer {
     margin-top: 30px;
     position: relative;
     z-index: 10;
+    transition: background-color 0.3s ease;
 }
 
 /* Page Content Styles */
