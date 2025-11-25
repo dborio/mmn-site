@@ -99,6 +99,57 @@ main {
     padding: 0; /* Padding is handled by .container */
 }
 
+/* Contact Form Styles */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    font-size: 1em;
+}
+
+#contact-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #66ff66;
+    color: #1e1e1e;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #99ff99;
+}
+
+#form-status {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+#form-status.success {
+    background-color: #33cc33;
+    color: #1e1e1e;
+    display: block;
+}
+
+#form-status.error {
+    background-color: #cc3333;
+    color: #e0e0e0;
+    display: block;
+}
+
 section {
     margin-bottom: 30px;
 }

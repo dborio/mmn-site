@@ -67,7 +67,13 @@
         <div id="contact-content" class="page-content">
             <section>
                 <h2>Contact Us</h2>
-                <p>If you have any questions or comments about what we are doing here please send click <a href="mailto:dan@makermindnexus.com" target="_blank">here</a></p>
+                <form id="contact-form" action="https://formsubmit.co/inquiries@makermindnexus.com" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+                <div id="form-status"></div>
             </section>
         </div>
         <div id="agreement-content" class="page-content">
