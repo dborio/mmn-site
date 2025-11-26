@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MakerMind Nexus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="tsparticles"></div>
     <header>
         <img id="logo" src="MMN Full White Green.png" alt="MakerMind Nexus Logo">
-        <p>Trying to bringing 3D Printing to Everyone</p>
+        <nav>
+            <button class="hamburger" id="hamburger-menu">
+                &#9776;
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#youtube">YouTube Channel</a>
+                <a href="#merch">Merch Shop</a>
+                <a href="#affiliate">Affiliate Links</a>
+                <a href="#agreement">Review Agreement</a>
+                <a href="#collaborate">Collaborate</a>
+                <a href="#socials">Socials</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
     </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#youtube">YouTube Channel</a>
-        <a href="#schedule">Stream Schedule</a>
-        <a href="#merch">Merch Shop</a>
-        <a href="#affiliate">Affiliate Links</a>
-        <a href="#agreement">Review Agreement</a>
-        <a href="#collaborate">Collaborate</a>
-        <a href="#contact">Contact</a>
-    </nav>
     <main class="container">
         <div id="home-content" class="page-content">
             <section>
@@ -33,14 +41,18 @@
             <section>
                 <h2>Follow My Journey on YouTube</h2>
                 <p>Check out my YouTube channel <a href="https://www.youtube.com/@makermindnexus" target="_blank">MakerMind Nexus</a> to watch videos of my 3D printing projects, tutorials, and the process of rehabbing old machines.</p>
-                <iframe width="560" height="315" src="https://youtube.com/embed/live_stream?channel=UCCOIvXPvjVhQodIxTOqRw5g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </section>
-        </div>
-        <div id="schedule-content" class="page-content">
-            <section>
-                <h2>Stream Schedule</h2>
-                <p>Join me live on my streams every Tuesday and Thursday from 5-7pm CST. During these streams, I work on 3d printing projects, rehab old machines, and answer any questions you might have about 3D printing.</p>
-                <p>Don't miss out on the fun and learning. Mark your calendars and join the MakerMind Nexus community!</p>
+
+                <h3>Live Stream</h3>
+                <p>When I'm live, you can watch it right here!</p>
+                <div class="video-container">
+                    <iframe src="https://youtube.com/embed/live_stream?channel=UCCOIvXPvjVhQodIxTOqRw5g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <h3>Recent Videos</h3>
+                <p>Catch up on my latest videos and projects.</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUCOIvXPvjVhQodIxTOqRw5g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </section>
         </div>
         <div id="merch-content" class="page-content">
@@ -53,12 +65,19 @@
             <section>
              <h2>Affiliate Links</h2>
                 <p><a href="https://www.sliceworx.com/?ref=mmn" target="_blank">Sliceworx.com</a> and use coupon code MMN for 5% off.</p>
+                <p><a href="https://store.micro-swiss.com/mmn" target="_blank">Micro Swiss</a></p>
             </section>
         </div>
         <div id="contact-content" class="page-content">
             <section>
                 <h2>Contact Us</h2>
-                <p>If you have any questions or comments about what we are doing here please send click <a href="mailto:dan@makermindnexus.com" target="_blank">here</a></p>
+                <form id="contact-form" action="https://formsubmit.co/inquiries@makermindnexus.com" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+                <div id="form-status"></div>
             </section>
         </div>
         <div id="agreement-content" class="page-content">
@@ -114,10 +133,24 @@
                 <p>If you’re interested in collaborating or learning more, please reach out to us through email <a href="mailto:dan@makermindnexus.com" target="_blank">here</a>. Let’s work together to show off the value of your product to the makers who need it most!</p>
             </section>
         </div>
+        <div id="socials-content" class="page-content">
+            <section>
+                <h2>Follow Me Online</h2>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@makermindnexus" target="_blank" class="social-link">YouTube</a>
+                    <a href="https://www.twitch.tv/makermindnexus" target="_blank" class="social-link">Twitch</a>
+                    <a href="https://x.com/makermindnexus" target="_blank" class="social-link">X (Twitter)</a>
+                    <a href="https://www.instagram.com/makermindnexus" target="_blank" class="social-link">Instagram</a>
+                    <a href="https://www.facebook.com/MakerMindNexus" target="_blank" class="social-link">Facebook</a>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 MakerMind Nexus. All rights reserved.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
+    <script src="js/background.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const logo = document.getElementById('logo');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
 
     if (logo) {
         logo.addEventListener('mouseenter', () => {
@@ -8,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         logo.addEventListener('mouseleave', () => {
             logo.classList.remove('logo-animated');
+        });
+    }
+
+    if (hamburgerMenu && navLinks) {
+        hamburgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     }
 
@@ -43,4 +51,31 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('hashchange', () => {
         showPage(window.location.hash);
     });
+
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formStatus.textContent = 'Thank you for your message!';
+                formStatus.className = 'success';
+                contactForm.reset();
+            } else {
+                formStatus.textContent = 'Oops! There was a problem submitting your form.';
+                formStatus.className = 'error';
+            }
+        });
+    }
 });
