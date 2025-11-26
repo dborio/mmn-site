@@ -37,7 +37,8 @@ header {
     align-items: center;
     background: #1e1e1e;
     color: #e0e0e0;
-    padding: 10px 20px;
+    padding: 10px;
+    text-align: center;
     border-bottom: 1px solid #333;
     position: relative;
     z-index: 10;
@@ -51,8 +52,13 @@ header img {
 
 /* Navigation Bar Styles */
 nav {
+    background: #333;
+    padding: 15px;
     display: flex;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    transition: background-color 0.3s ease;
 }
 
 .nav-links {
