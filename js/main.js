@@ -59,21 +59,27 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const formData = new FormData(contactForm);
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            if (response.ok) {
-                formStatus.textContent = 'Thank you for your message!';
-                formStatus.className = 'success';
-                contactForm.reset();
-            } else {
-                formStatus.textContent = 'Oops! There was a problem submitting your form.';
+                if (response.ok) {
+                    formStatus.textContent = 'Thank you for your message!';
+                    formStatus.className = 'success';
+                    contactForm.reset();
+                } else {
+                    formStatus.textContent = 'Oops! There was a problem submitting your form.';
+                    formStatus.className = 'error';
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                formStatus.textContent = 'Oops! A network error occurred. Please try again later.';
                 formStatus.className = 'error';
             }
         });
